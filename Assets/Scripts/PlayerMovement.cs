@@ -7,7 +7,6 @@ using UnityEngine.Rendering;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed;
-    public float rotateSpeed;
 
     private Vector2 rot;
     private bool moving, looking;
@@ -15,17 +14,10 @@ public class PlayerMovement : MonoBehaviour
     [Serializable]
     struct ActionReferences
     {
-        public InputActionReference move, look;
+        public InputActionReference move, look, attack;
     }
     
     [SerializeField] private ActionReferences actionReferences;
-    
-    private PlayerInput playerInput;
-    
-    private void Awake()
-    {
-        playerInput = GetComponent<PlayerInput>();
-    }
 
     private void OnEnable()
     {
@@ -33,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
         actionReferences.move.action.canceled += AllowMove;
         actionReferences.look.action.performed += AllowLook;
         actionReferences.look.action.canceled += AllowLook;
+        actionReferences.attack.action.performed += ctx => Debug.Log("Attack!");
     }
 
     private void OnDisable()
@@ -82,11 +75,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        Vector2 direction = actionReferences.move.action.ReadValue<Vector2>();
-        if (direction.sqrMagnitude < 0.01) return;
-        var scaledMoveSpeed = moveSpeed * Time.deltaTime;
-        var moveVector = Quaternion.Euler(0, transform.eulerAngles.y, 0) * new Vector3(direction.x, 0, direction.y);
-        transform.position += moveVector * scaledMoveSpeed;
+        Vector2 input = actionReferences.move.action.ReadValue<Vector2>();
+        Vector3 direction = new Vector3(input.x, 0f, input.y).normalized;
+        transform.position += direction * moveSpeed * Time.deltaTime;
     }
 
     private void Look()
@@ -94,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
         var mousePos = Mouse.current.position.ReadValue();
         Ray ray = Camera.main.ScreenPointToRay(mousePos);
 
-        if (Physics.Raycast(ray, out RaycastHit hit, 100f, LayerMask.GetMask("Ground")))
+        if (Physics.Raycast(ray, out RaycastHit hit, 100f))
         {
             Vector3 targetPos = hit.point;
             Vector3 direction = targetPos - transform.position;
