@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed;
 
     private Vector2 rot;
-    private bool moving, looking;
+    private bool moving, looking, attacking;
 
     [Serializable]
     struct ActionReferences
@@ -21,19 +21,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnEnable()
     {
-        actionReferences.move.action.performed +=  AllowMove;
-        actionReferences.move.action.canceled += AllowMove;
-        actionReferences.look.action.performed += AllowLook;
-        actionReferences.look.action.canceled += AllowLook;
-        actionReferences.attack.action.performed += ctx => Debug.Log("Attack!");
+        actionReferences.move.action.performed +=  Allow;
+        actionReferences.move.action.canceled += Allow;
+        actionReferences.look.action.performed += Allow;
+        actionReferences.look.action.canceled += Allow;
+        actionReferences.attack.action.performed += Allow;
+        actionReferences.attack.action.canceled += Allow;
     }
 
     private void OnDisable()
     {
-        actionReferences.move.action.performed -= AllowMove;
-        actionReferences.move.action.canceled -= AllowMove;
-        actionReferences.look.action.performed -= AllowLook;
-        actionReferences.look.action.canceled -= AllowLook;
+        actionReferences.move.action.performed -= Allow;
+        actionReferences.move.action.canceled -= Allow;
+        actionReferences.look.action.performed -= Allow;
+        actionReferences.look.action.canceled -= Allow;
+        actionReferences.attack.action.performed -= Allow;
+        actionReferences.attack.action.canceled -= Allow;
     }
 
     public void Update()
@@ -47,29 +50,47 @@ public class PlayerMovement : MonoBehaviour
         {
             Look();
         }
+
+        if (attacking)
+        {
+            Attack();
+        }
     }
 
-    private void AllowMove(InputAction.CallbackContext context)
+    private void Allow(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if(context.action == actionReferences.move.action)
         {
-            moving = true;
+            if (context.performed)
+            {
+                moving = true;
+            }
+            else if (context.canceled)
+            {
+                moving = false;
+            }
         }
-        else if (context.canceled)
+        else if(context.action == actionReferences.look.action)
         {
-            moving = false;
+            if (context.performed)
+            {
+                looking = true;
+            }
+            else if (context.canceled)
+            {
+                looking = false;
+            }
         }
-    }
-    
-    private void AllowLook(InputAction.CallbackContext context)
-    {
-        if (context.performed)
+        else if(context.action == actionReferences.attack.action)
         {
-            looking = true;
-        }
-        else if (context.canceled)
-        {
-            looking = false;
+            if (context.performed)
+            {
+                attacking = true;
+            }
+            else if (context.canceled)
+            {
+                attacking = false;
+            }
         }
     }
 
@@ -97,5 +118,10 @@ public class PlayerMovement : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0f, lookRotation.eulerAngles.y, 0f);
             }
         }
+    }
+
+    private void Attack()
+    {
+        Debug.Log("Attacking!!");
     }
 }
