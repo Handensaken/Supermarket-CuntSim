@@ -59,5 +59,56 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b97d1751fc72b064eac9705d8a9f2c12, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3792660007757602228}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b97d1751fc72b064eac9705d8a9f2c12, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3182608150703864371}
   m_SourcePrefab: {fileID: 100100000, guid: b97d1751fc72b064eac9705d8a9f2c12, type: 3}
+--- !u!1 &5115236381744954539 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b97d1751fc72b064eac9705d8a9f2c12, type: 3}
+  m_PrefabInstance: {fileID: 5349592129566065146}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-3792660007757602228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5115236381744954539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad7be763b15ddb041ae29b8c70b46a33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreObjectData: {fileID: 11400000, guid: 2aaf61ed5fc845047b98701ae0dec533, type: 2}
+--- !u!54 &3182608150703864371
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5115236381744954539}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
