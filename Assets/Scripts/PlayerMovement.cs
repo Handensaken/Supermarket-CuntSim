@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         animator.SetBool("Attacking", false);
+        animator.SetBool("Running", false);
     }
 
     private void OnEnable()
@@ -52,8 +53,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void Update()
     {
-        //Debug.Log(animator.GetBool("Attacking"));
-        
         if (moving)
         {
             Move();
@@ -77,10 +76,12 @@ public class PlayerMovement : MonoBehaviour
             if (context.performed)
             {
                 moving = true;
+                animator.SetBool("Running", true);
             }
             else if (context.canceled)
             {
                 moving = false;
+                animator.SetBool("Running", false);
             }
         }
         else if(context.action == actionReferences.look.action)
