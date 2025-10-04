@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [Serializable]
     struct ActionReferences
     {
-        public InputActionReference move, look, attack, interact;
+        public InputActionReference move, look, attack, interact, pee;
     }
     
     [SerializeField] private ActionReferences actionReferences;
@@ -42,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
         actionReferences.attack.action.performed += Allow;
         actionReferences.attack.action.canceled += Allow;
         actionReferences.interact.action.started += Interact;
+        actionReferences.pee.action.performed += Allow;
+        actionReferences.pee.action.canceled += Allow;
     }
 
     private void OnDisable()
@@ -52,7 +54,9 @@ public class PlayerMovement : MonoBehaviour
         actionReferences.look.action.canceled -= Allow;
         actionReferences.attack.action.performed -= Allow;
         actionReferences.attack.action.canceled -= Allow;
-        actionReferences.interact.action.performed -= Interact;
+        actionReferences.interact.action.started -= Interact;
+        actionReferences.pee.action.performed -= Allow;
+        actionReferences.pee.action.canceled -= Allow;
     }
 
     public void Update()
@@ -110,6 +114,20 @@ public class PlayerMovement : MonoBehaviour
             {
                 attacking = false;
                 animator.SetLayerWeight(1, 0);
+            }
+        }
+        
+        else if(context.action == actionReferences.pee.action)
+        {
+            if (context.performed)
+            {
+                Debug.Log("pissing");
+                animator.SetBool("Pissing", true);
+            }
+            else if (context.canceled)
+            {
+                Debug.Log("stopped pissing");
+                animator.SetBool("Pissing", false);
             }
         }
     }
