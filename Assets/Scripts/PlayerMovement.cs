@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 
@@ -11,11 +12,12 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 rot;
     private bool moving, looking, attacking;
     private Animator animator;
+    [SerializeField] private List<MischiefEvent> currentMischiefEvents = new List<MischiefEvent>();
 
     [Serializable]
     struct ActionReferences
     {
-        public InputActionReference move, look, attack;
+        public InputActionReference move, look, attack, interact;
     }
     
     [SerializeField] private ActionReferences actionReferences;
@@ -39,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
         actionReferences.look.action.canceled += Allow;
         actionReferences.attack.action.performed += Allow;
         actionReferences.attack.action.canceled += Allow;
+        actionReferences.interact.action.started += Interact;
     }
 
     private void OnDisable()
@@ -49,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
         actionReferences.look.action.canceled -= Allow;
         actionReferences.attack.action.performed -= Allow;
         actionReferences.attack.action.canceled -= Allow;
+        actionReferences.interact.action.performed -= Interact;
     }
 
     public void Update()
@@ -140,5 +144,17 @@ public class PlayerMovement : MonoBehaviour
     private void Attack()
     {
         
+    }
+
+    private void Interact(InputAction.CallbackContext context)
+    {
+        Debug.Log("tried interacting");
+        foreach (var mischief in currentMischiefEvents)
+        {
+            if (mischief.allowMischief)
+            {
+                mischief.OnMischief.Invoke();
+            }
+        }
     }
 }
