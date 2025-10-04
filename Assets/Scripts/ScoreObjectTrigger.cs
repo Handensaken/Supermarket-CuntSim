@@ -13,7 +13,12 @@ public class ScoreObjectTrigger : MonoBehaviour
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other) //Ludel, don't complain
     {
-        Debug.Log("ScoreValue: "+other.GetComponent<ScoreObject>().ScoreValue);
-        scorePort.OnScore(other.GetComponent<ScoreObject>().ScoreValue);
+        ScoreObject scoreObject = other.GetComponent<ScoreObject>();
+        if (scoreObject.enabled)
+        {
+            scorePort.OnScore(scoreObject.ScoreValue);
+            scoreObject.enabled = false;
+        }
+        
     }
 }
