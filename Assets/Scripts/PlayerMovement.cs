@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        animator.SetBool("Attacking", false);
+        animator.SetLayerWeight(1, 0);
         animator.SetBool("Running", false);
     }
 
@@ -76,12 +76,12 @@ public class PlayerMovement : MonoBehaviour
             if (context.performed)
             {
                 moving = true;
-                animator.SetBool("Running", true);
+                animator.SetLayerWeight(0, 1);
             }
             else if (context.canceled)
             {
                 moving = false;
-                animator.SetBool("Running", false);
+                animator.SetLayerWeight(0, 0);
             }
         }
         else if(context.action == actionReferences.look.action)
@@ -100,12 +100,12 @@ public class PlayerMovement : MonoBehaviour
             if (context.performed)
             {
                 attacking = true;
-                animator.SetBool("Attacking", true);
+                animator.SetLayerWeight(1, 1);
             }
             else if (context.canceled)
             {
                 attacking = false;
-                animator.SetBool("Attacking", false);
+                animator.SetLayerWeight(1, 0);
             }
         }
     }
