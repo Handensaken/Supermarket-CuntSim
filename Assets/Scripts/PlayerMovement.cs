@@ -28,7 +28,6 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         animator.SetLayerWeight(1, 0);
-        animator.SetBool("Running", false);
     }
 
     private void OnEnable()
@@ -76,12 +75,11 @@ public class PlayerMovement : MonoBehaviour
             if (context.performed)
             {
                 moving = true;
-                animator.SetLayerWeight(0, 1);
             }
             else if (context.canceled)
             {
                 moving = false;
-                animator.SetLayerWeight(0, 0);
+                
             }
         }
         else if(context.action == actionReferences.look.action)
