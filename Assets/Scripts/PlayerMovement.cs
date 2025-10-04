@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 rot;
     private bool moving, looking, attacking;
+    private Animator animator;
 
     [Serializable]
     struct ActionReferences
@@ -18,6 +19,16 @@ public class PlayerMovement : MonoBehaviour
     }
     
     [SerializeField] private ActionReferences actionReferences;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
+    private void Start()
+    {
+        animator.SetBool("Attacking", false);
+    }
 
     private void OnEnable()
     {
@@ -41,6 +52,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void Update()
     {
+        //Debug.Log(animator.GetBool("Attacking"));
+        
         if (moving)
         {
             Move();
@@ -86,10 +99,12 @@ public class PlayerMovement : MonoBehaviour
             if (context.performed)
             {
                 attacking = true;
+                animator.SetBool("Attacking", true);
             }
             else if (context.canceled)
             {
                 attacking = false;
+                animator.SetBool("Attacking", false);
             }
         }
     }
@@ -123,6 +138,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Attack()
     {
-        Debug.Log("Attacking!!");
+        
     }
 }
