@@ -70,11 +70,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Look();
         }
-
-        if (attacking)
-        {
-            Attack();
-        }
     }
 
     private void Allow(InputAction.CallbackContext context)
@@ -121,12 +116,10 @@ public class PlayerMovement : MonoBehaviour
         {
             if (context.performed)
             {
-                Debug.Log("pissing");
                 animator.SetBool("Pissing", true);
             }
             else if (context.canceled)
             {
-                Debug.Log("stopped pissing");
                 animator.SetBool("Pissing", false);
             }
         }
@@ -157,11 +150,6 @@ public class PlayerMovement : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0f, lookRotation.eulerAngles.y + 90, 0f);
             }
         }
-    }
-
-    private void Attack()
-    {
-        
     }
 
     private void Interact(InputAction.CallbackContext context)
