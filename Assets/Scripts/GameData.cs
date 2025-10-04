@@ -1,8 +1,10 @@
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(menuName = "Game/GameData")]
 public class GameData : ScriptableObject
 {
-    [SerializeField] private string defeatScene;
-    [SerializeField] private string victoryScene;
+    [SerializeField] public SceneAsset defeatScene;
+    [SerializeField] public SceneAsset victoryScene;
 }

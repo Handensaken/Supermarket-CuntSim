@@ -39,7 +39,7 @@ public class TimeManager : MonoBehaviour
             time += Time.deltaTime;
             yield return null;
         }
-        gamePort.OnGameEnd(GamePort.GameStage.NextScene);
+        gamePort.OnGameEnd(GamePort.GameStage.Victory);
         Debug.Log("EndOfTimer");
     }
 

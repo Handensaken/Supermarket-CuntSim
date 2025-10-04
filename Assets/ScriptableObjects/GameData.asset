@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 185fa6a088ed16b4a908ef7230af9b42, type: 3}
-  m_Name: New Game Data
+  m_Name: GameData
   m_EditorClassIdentifier: 
-  defeatScene: L
-  victoryScene: W
+  defeatScene: {fileID: 102900000, guid: 67fceb825e124214d925734df52ba9e9, type: 3}
+  victoryScene: {fileID: 102900000, guid: 5108943f62c8b3c4897657594194ca8b, type: 3}
