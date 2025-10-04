@@ -1,25 +1,44 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using GameStage = GamePort.GameStage;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private string sceneToLoad;
-    [Space,SerializeField] private GamePort gamePort;
-    
+    [Space]
+    [SerializeField] private GamePort gamePort;
+    [SerializeField] private GameData gameData;
     
     private void OnEnable()
     {
-        gamePort.onGameTimeEnd += LoadNextScene;
+        gamePort.OnGameEnd += HandleSceneChange;
     }
 
     private void OnDisable()
     {
-        gamePort.onGameTimeEnd -= LoadNextScene;
+        gamePort.OnGameEnd -= HandleSceneChange;
     }
 
-
+    private void HandleSceneChange(GameStage gameStage)
+    {
+        switch (gameStage)
+        {
+            case GameStage.NextScene:
+                LoadNextScene();
+                break;
+            case GameStage.Victory:
+                LoadNextScene();
+                break;
+            case GameStage.Defeat:
+                LoadNextScene();
+                break;
+            default:
+                Debug.LogWarning("missing implementation in sceneHandler");
+                break;
+        }
+    }
+    
     private void LoadNextScene()
     {
-        SceneManager.LoadScene(sceneToLoad);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
     }
 }
