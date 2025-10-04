@@ -99,6 +99,7 @@ public class PlayerMovement : MonoBehaviour
         Vector2 input = actionReferences.move.action.ReadValue<Vector2>();
         Vector3 direction = new Vector3(input.x, 0f, input.y).normalized;
         transform.position += direction * moveSpeed * Time.deltaTime;
+        Look();
     }
 
     private void Look()
@@ -115,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
             if (direction != Vector3.zero)
             {
                 Quaternion lookRotation = Quaternion.LookRotation(direction);
-                transform.rotation = Quaternion.Euler(0f, lookRotation.eulerAngles.y, 0f);
+                transform.rotation = Quaternion.Euler(0f, lookRotation.eulerAngles.y + 90, 0f);
             }
         }
     }
