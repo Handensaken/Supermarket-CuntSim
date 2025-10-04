@@ -13,7 +13,7 @@ public class TimeManager : MonoBehaviour
     [Space,SerializeField] private GamePort gamePort;
 
     private Coroutine _timerCoroutine;
-    private UnityAction<int> _scoreHandle;
+    private UnityAction<uint> _scoreHandle;
     private void OnEnable()
     {
         _scoreHandle = _ => BeginTimer();
