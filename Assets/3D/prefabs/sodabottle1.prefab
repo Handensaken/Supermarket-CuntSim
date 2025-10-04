@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sodabottle1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e7ea6b36ba0cd0d4b830940af50e0101, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -66,6 +70,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e7ea6b36ba0cd0d4b830940af50e0101, type: 3}
       insertIndex: -1
       addedObject: {fileID: -5719211288735408933}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e7ea6b36ba0cd0d4b830940af50e0101, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7448526138022168633}
   m_SourcePrefab: {fileID: 100100000, guid: e7ea6b36ba0cd0d4b830940af50e0101, type: 3}
 --- !u!1 &5852013062810078555 stripped
 GameObject:
@@ -112,3 +119,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &7448526138022168633
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5852013062810078555}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.008859015, y: 0.008859017, z: 0.02224756}
+  m_Center: {x: 0, y: 0, z: 0.011241239}
