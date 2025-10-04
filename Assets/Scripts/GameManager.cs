@@ -1,16 +1,25 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private string sceneToLoad;
+    [Space,SerializeField] private GamePort gamePort;
+    
+    
+    private void OnEnable()
     {
-        
+        gamePort.onGameTimeEnd += LoadNextScene;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        gamePort.onGameTimeEnd -= LoadNextScene;
+    }
+
+
+    private void LoadNextScene()
+    {
+        SceneManager.LoadScene(sceneToLoad);
     }
 }
