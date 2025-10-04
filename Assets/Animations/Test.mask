@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Test
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Character_Msh
+    m_Weight: 0
+  - m_Path: joint1
+    m_Weight: 0
+  - m_Path: joint1/Pelvis_Jnt
+    m_Weight: 0
+  - m_Path: joint1/Pelvis_Jnt/L_Hip_Jnt
+    m_Weight: 0
+  - m_Path: joint1/Pelvis_Jnt/L_Hip_Jnt/L_Knee_Jnt
+    m_Weight: 0
+  - m_Path: joint1/Pelvis_Jnt/L_Hip_Jnt/L_Knee_Jnt/L_Foot_jnt
+    m_Weight: 0
+  - m_Path: joint1/Pelvis_Jnt/L_Hip_Jnt/L_Knee_Jnt/L_Foot_jnt/L_Toe_Jnt
+    m_Weight: 0
+  - m_Path: joint1/Pelvis_Jnt/R_Hip_Jnt
+    m_Weight: 0
+  - m_Path: joint1/Pelvis_Jnt/R_Hip_Jnt/R_Knee_Jnt
+    m_Weight: 0
+  - m_Path: joint1/Pelvis_Jnt/R_Hip_Jnt/R_Knee_Jnt/R_Foot_jnt
+    m_Weight: 0
+  - m_Path: joint1/Pelvis_Jnt/R_Hip_Jnt/R_Knee_Jnt/R_Foot_jnt/R_Toe_Jnt
+    m_Weight: 0
+  - m_Path: joint1/Pelvis_Jnt/Spine01_Jnt
+    m_Weight: 1
+  - m_Path: joint1/Pelvis_Jnt/Spine01_Jnt/Spine02_Jnt
+    m_Weight: 1
+  - m_Path: joint1/Pelvis_Jnt/Spine01_Jnt/Spine02_Jnt/Spine03_Jnt
+    m_Weight: 1
+  - m_Path: joint1/Pelvis_Jnt/Spine01_Jnt/Spine02_Jnt/Spine03_Jnt/L_Shoulder_Jnt
+    m_Weight: 1
+  - m_Path: joint1/Pelvis_Jnt/Spine01_Jnt/Spine02_Jnt/Spine03_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt
+    m_Weight: 1
+  - m_Path: joint1/Pelvis_Jnt/Spine01_Jnt/Spine02_Jnt/Spine03_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Forearm_Jnt
+    m_Weight: 1
+  - m_Path: joint1/Pelvis_Jnt/Spine01_Jnt/Spine02_Jnt/Spine03_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Forearm_Jnt/L_Hand_Jnt
+    m_Weight: 1
+  - m_Path: joint1/Pelvis_Jnt/Spine01_Jnt/Spine02_Jnt/Spine03_Jnt/R_Shoulder_Jnt
+    m_Weight: 1
+  - m_Path: joint1/Pelvis_Jnt/Spine01_Jnt/Spine02_Jnt/Spine03_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt
+    m_Weight: 1
+  - m_Path: joint1/Pelvis_Jnt/Spine01_Jnt/Spine02_Jnt/Spine03_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Forearm_Jnt
+    m_Weight: 1
+  - m_Path: joint1/Pelvis_Jnt/Spine01_Jnt/Spine02_Jnt/Spine03_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Forearm_Jnt/R_Hand_Jnt
+    m_Weight: 1
+  - m_Path: joint1/Pelvis_Jnt/Spine01_Jnt/Spine02_Jnt/Spine03_Jnt/Spine04_Jnt
+    m_Weight: 1
+  - m_Path: joint1/Pelvis_Jnt/Spine01_Jnt/Spine02_Jnt/Spine03_Jnt/Spine04_Jnt/Neck_Jnt
+    m_Weight: 1
+  - m_Path: joint1/Pelvis_Jnt/Spine01_Jnt/Spine02_Jnt/Spine03_Jnt/Spine04_Jnt/Neck_Jnt/Head_Jnt
+    m_Weight: 1
