@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider))]
-public class ObjectTrigger : MonoBehaviour
+public class ScoreObjectTrigger : MonoBehaviour
 {
     [SerializeField] private ScorePort scorePort;
     
