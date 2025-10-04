@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 
@@ -11,11 +12,12 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 rot;
     private bool moving, looking, attacking;
     private Animator animator;
+    [SerializeField] private List<MischiefEvent> currentMischiefEvents = new List<MischiefEvent>();
 
     [Serializable]
     struct ActionReferences
     {
-        public InputActionReference move, look, attack;
+        public InputActionReference move, look, attack, interact, pee;
     }
     
     [SerializeField] private ActionReferences actionReferences;
@@ -27,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        animator.SetBool("Attacking", false);
+        animator.SetLayerWeight(1, 0);
         animator.SetBool("Running", false);
     }
 
@@ -39,6 +41,9 @@ public class PlayerMovement : MonoBehaviour
         actionReferences.look.action.canceled += Allow;
         actionReferences.attack.action.performed += Allow;
         actionReferences.attack.action.canceled += Allow;
+        actionReferences.interact.action.started += Interact;
+        actionReferences.pee.action.performed += Allow;
+        actionReferences.pee.action.canceled += Allow;
     }
 
     private void OnDisable()
@@ -49,6 +54,9 @@ public class PlayerMovement : MonoBehaviour
         actionReferences.look.action.canceled -= Allow;
         actionReferences.attack.action.performed -= Allow;
         actionReferences.attack.action.canceled -= Allow;
+        actionReferences.interact.action.started -= Interact;
+        actionReferences.pee.action.performed -= Allow;
+        actionReferences.pee.action.canceled -= Allow;
     }
 
     public void Update()
@@ -61,11 +69,6 @@ public class PlayerMovement : MonoBehaviour
         if (looking)
         {
             Look();
-        }
-
-        if (attacking)
-        {
-            Attack();
         }
     }
 
@@ -100,12 +103,24 @@ public class PlayerMovement : MonoBehaviour
             if (context.performed)
             {
                 attacking = true;
-                animator.SetBool("Attacking", true);
+                animator.SetLayerWeight(1, 1);
             }
             else if (context.canceled)
             {
                 attacking = false;
-                animator.SetBool("Attacking", false);
+                animator.SetLayerWeight(1, 0);
+            }
+        }
+        
+        else if(context.action == actionReferences.pee.action)
+        {
+            if (context.performed)
+            {
+                animator.SetBool("Pissing", true);
+            }
+            else if (context.canceled)
+            {
+                animator.SetBool("Pissing", false);
             }
         }
     }
@@ -137,8 +152,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void Attack()
+    private void Interact(InputAction.CallbackContext context)
     {
-        
+        Debug.Log("tried interacting");
+        foreach (var mischief in currentMischiefEvents)
+        {
+            if (mischief.allowMischief)
+            {
+                mischief.OnMischief.Invoke();
+            }
+        }
     }
 }

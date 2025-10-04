@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using GameStage = GamePort.GameStage;
@@ -26,10 +27,10 @@ public class GameManager : MonoBehaviour
                 LoadNextScene();
                 break;
             case GameStage.Victory:
-                LoadNextScene();
+                LoadScene(gameData.victoryScene);
                 break;
             case GameStage.Defeat:
-                LoadNextScene();
+                LoadScene(gameData.defeatScene);
                 break;
             default:
                 Debug.LogWarning("missing implementation in sceneHandler");
@@ -40,5 +41,10 @@ public class GameManager : MonoBehaviour
     private void LoadNextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
+    }
+
+    private void LoadScene(SceneAsset scene)
+    {
+        SceneManager.LoadScene(scene.name);
     }
 }

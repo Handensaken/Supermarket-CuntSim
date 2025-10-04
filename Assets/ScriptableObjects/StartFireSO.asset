@@ -9,8 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 185fa6a088ed16b4a908ef7230af9b42, type: 3}
-  m_Name: New Game Data
+  m_Script: {fileID: 11500000, guid: f4a8ef7f34d307c48b5f9db8cbd37c9d, type: 3}
+  m_Name: StartFireSO
   m_EditorClassIdentifier: 
-  defeatScene: L
-  victoryScene: W
+  OnMischiefEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMischiefExit:
+    m_PersistentCalls:
+      m_Calls: []
