@@ -77,6 +77,12 @@ namespace Guard
             _currentState = nextState;
             _currentState.Enter();
         }
+
+        private void Update()
+        {
+            _currentState.Update();
+        }
+
         #region Gizmos
 
         private void OnDrawGizmos()
