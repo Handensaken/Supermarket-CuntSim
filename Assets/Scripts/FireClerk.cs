@@ -16,7 +16,6 @@ public class FireClerk : MischiefEvent
     
     private void Mischief()
     {
-        Debug.Log("clerk on fire");
         allowMischief = false;
         if (!interactableObject.GetComponent<Animator>()) return;
         Animator animator = interactableObject.GetComponent<Animator>();
