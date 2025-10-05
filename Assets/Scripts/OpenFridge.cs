@@ -20,9 +20,9 @@ public class OpenFridge : MischiefEvent
         Animator animator = interactableObject.GetComponent<Animator>();
         animator.SetTrigger("Open");
         
-        if (!interactableObject.GetComponent<Collider>()) return;
-        Collider collider = interactableObject.GetComponent<Collider>();
-        collider.isTrigger = false;
+        if (!interactableObject.GetComponent<MischiefHandler>()) return;
+        MischiefHandler mischief = interactableObject.GetComponent<MischiefHandler>();
+        mischief.enabled = false;
         
         AudioSource audioSource = interactableObject.GetComponent<AudioSource>();
         if (audioSource is null) return;
