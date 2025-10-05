@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private List<MischiefEvent> currentMischiefEvents = new List<MischiefEvent>();
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioResource peeSound, footstepsSound;
+    private Rigidbody rb;
 
     [Serializable]
     struct ActionReferences
@@ -28,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
     }
 
     private void Start()
@@ -139,7 +141,7 @@ public class PlayerMovement : MonoBehaviour
         Vector2 direction = actionReferences.move.action.ReadValue<Vector2>();
         var scaledMoveSpeed = moveSpeed * Time.deltaTime;
         var moveVector = Quaternion.Euler(0, transform.eulerAngles.y + 270, 0) * new Vector3(direction.x, 0, direction.y);
-        transform.position += moveVector * scaledMoveSpeed;
+        rb.position += moveVector * scaledMoveSpeed;
         Look();
     }
 
