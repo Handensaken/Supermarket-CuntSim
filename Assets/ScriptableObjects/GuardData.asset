@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: GuardData
   m_EditorClassIdentifier: 
   patrol:
+    speed: 3
+    angularSpeed: 3
+    acceleration: 3
+  run:
     speed: 10
     angularSpeed: 10
     acceleration: 10
-  run:
-    speed: 0
-    angularSpeed: 0
-    acceleration: 0
   sight:
     totalSightAngle: 95.9
     sightRange: 10
+  attackRange: 0
