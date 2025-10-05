@@ -8,6 +8,8 @@ using UnityEngine.Rendering;
 [RequireComponent(typeof(PlayerInput))]
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private ScorePort scorePort;
+    
     public float moveSpeed;
 
     private Vector2 rot;
@@ -172,6 +174,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (mischief.allowMischief)
             {
+                scorePort.OnScore(100);
                 mischief.OnMischief.Invoke();
             }
         }
