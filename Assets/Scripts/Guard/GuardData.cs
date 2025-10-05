@@ -10,6 +10,7 @@ namespace Guard
         public Parameters run;
 
         public Sight sight;
+        [Min(0)] public float attackRange;
     }
 
     [Serializable]
