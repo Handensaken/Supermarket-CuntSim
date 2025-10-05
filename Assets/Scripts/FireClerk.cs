@@ -20,6 +20,11 @@ public class FireClerk : MischiefEvent
         if (!interactableObject.GetComponent<Animator>()) return;
         Animator animator = interactableObject.GetComponent<Animator>();
         interactableObject.GetComponent<Animator>().SetTrigger("Start");
+        
+        if (!interactableObject.GetComponent<MischiefHandler>()) return;
+        MischiefHandler mischief = interactableObject.GetComponent<MischiefHandler>();
+        mischief.enabled = false;
+        
         VisualEffect ve = interactableObject.GetComponentInChildren<VisualEffect>();
         if (ve is null) return;
         ve.enabled = true;

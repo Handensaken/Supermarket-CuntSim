@@ -17,6 +17,10 @@ public class StartFire : MischiefEvent
     
     private void Mischief()
     {
+        if (!interactableObject.GetComponent<MischiefHandler>()) return;
+        MischiefHandler mischief = interactableObject.GetComponent<MischiefHandler>();
+        mischief.enabled = false;
+        
         interactableObject.SetActive(true);
     }
 }
