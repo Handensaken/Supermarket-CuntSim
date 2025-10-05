@@ -155,7 +155,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Interact(InputAction.CallbackContext context)
     {
-        Debug.Log("tried interacting");
         animator.SetLayerWeight(2,1); 
         animator.SetTrigger("Interact");
         foreach (var mischief in currentMischiefEvents)

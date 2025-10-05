@@ -20,6 +20,7 @@ namespace Guard
         public GuardRun guardRun = new GuardRun();
         public GuardSlip guardSlip = new GuardSlip();
         public GuardAttack guardAttack = new GuardAttack();
+        public GuardSearch guardSearch = new GuardSearch();
         
         private GuardState _currentState;
         [SerializeField]public States debugStates = States.Null;
@@ -56,6 +57,7 @@ namespace Guard
             guardRun.Awake(this);
             guardAttack.Awake(this);
             guardSlip.Awake(this);
+            guardSearch.Awake(this);
         }
 
         private void Start()
@@ -179,6 +181,7 @@ namespace Guard
         Patrol,
         Run,
         Attack,
-        Slip
+        Slip,
+        Search
     }
 }
