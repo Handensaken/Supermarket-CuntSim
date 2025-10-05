@@ -23,9 +23,11 @@ namespace Guard
             SetUpStateValuesInAgent(patrolValues.speed,patrolValues.angularSpeed, patrolValues.acceleration);
         }
 
-        public override void Update()
+        public override void Update() {}
+
+        public override void FixedUpdate()
         {
-            //TrollEyes
+            //eyes
             GuardState newState = Check4Player(guardBehaviour.Eyes, guardBehaviour.GuardData.sight);
             if (newState != this)
             {

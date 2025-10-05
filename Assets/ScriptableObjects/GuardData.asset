@@ -23,4 +23,4 @@ MonoBehaviour:
   sight:
     totalSightAngle: 95.9
     sightRange: 10
-  attackRange: 0
+  attackRange: 2

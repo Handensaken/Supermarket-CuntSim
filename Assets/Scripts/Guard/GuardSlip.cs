@@ -20,6 +20,8 @@ namespace Guard
             //Check if done animation
         }
 
+        public override void FixedUpdate() {}
+
         public override void Exit()
         {
             //CheckConditions for player
