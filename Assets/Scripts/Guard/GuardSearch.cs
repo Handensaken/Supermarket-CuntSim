@@ -20,7 +20,9 @@ namespace Guard
             SetUpStateValuesInAgent(searchParameters.speed, searchParameters.angularSpeed, searchParameters.acceleration);
         }
 
-        public override void Update()
+        public override void Update() {}
+
+        public override void FixedUpdate()
         {
             if (guardBehaviour.Agent.remainingDistance <= 0.01f)
             {

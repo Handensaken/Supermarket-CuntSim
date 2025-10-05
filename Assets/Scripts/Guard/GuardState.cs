@@ -12,6 +12,7 @@ namespace Guard
         public abstract void Awake(GuardBehaviour guardBehaviour);
         public abstract void Enter();
         public abstract void Update();
+        public abstract void FixedUpdate();
         public abstract void Exit();
         
         protected void SetUpStateValuesInAgent(float speed, float angularSpeed, float acceleration)
