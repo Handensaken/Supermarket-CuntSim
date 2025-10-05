@@ -156,6 +156,8 @@ public class PlayerMovement : MonoBehaviour
     private void Interact(InputAction.CallbackContext context)
     {
         Debug.Log("tried interacting");
+        animator.SetLayerWeight(2,1); 
+        animator.SetTrigger("Interact");
         foreach (var mischief in currentMischiefEvents)
         {
             if (mischief.allowMischief)
@@ -163,5 +165,10 @@ public class PlayerMovement : MonoBehaviour
                 mischief.OnMischief.Invoke();
             }
         }
+    }
+
+    public void SetLayerWeightToZero(int layer)
+    {
+        animator.SetLayerWeight(layer, 0);
     }
 }
