@@ -99,7 +99,7 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
-    - _CutoffRange: 12
+    - _CutoffRange: 7
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -112,7 +112,7 @@ Material:
     - _GlossyReflections: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _Outline_Thickness: 0.05
+    - _Outline_Thickness: 0.1
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 1
@@ -131,7 +131,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HighlightColour: {r: 1, g: 1, b: 1, a: 1}
     - _Outline_Colour: {r: 1, g: 1, b: 1, a: 0}
-    - _PlayerPos: {r: -23.654142, g: -0.011095285, b: -13.887362, a: 0}
+    - _PlayerPos: {r: -47.976578, g: 0.12093353, b: -35.48541, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

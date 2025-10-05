@@ -1759,8 +1759,8 @@
     "m_ObjectId": "93f189c31a134ddf91c5518209e7fcee",
     "m_Title": "Scales outline by object scale and camera distance",
     "m_Position": {
-        "x": -1568.666748046875,
-        "y": 386.6666564941406
+        "x": -1568.6666259765625,
+        "y": 386.6666259765625
     }
 }
 
@@ -2704,7 +2704,7 @@
     "m_FloatType": 1,
     "m_RangeValues": {
         "x": 0.0,
-        "y": 0.05000000074505806
+        "y": 0.10000000149011612
     }
 }
 
