@@ -723,6 +723,7 @@ Transform:
   - {fileID: 7943417676588920270}
   - {fileID: 1306703644865351974}
   - {fileID: 2363735208342780231}
+  - {fileID: 8388391873983761763}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7950497390302836166
@@ -759,6 +760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d197e5584aa69c348abb44d0a35c3745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scorePort: {fileID: 0}
   moveSpeed: 10
   currentMischiefEvents:
   - {fileID: 11400000, guid: c3257684d1818dc42973f30c3fb51564, type: 2}
@@ -966,6 +968,53 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &7071295386474848061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8388391873983761763}
+  - component: {fileID: 5588101446257105619}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8388391873983761763
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7071295386474848061}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8875332869731343982}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5588101446257105619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7071295386474848061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7424fe1d04996f94cb6f8cd42d0d5d1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 7950497390302836166}
+  fuck: 2
+  piss: {fileID: 1481535700165685548, guid: a2a4217e3c954da42878d6a828c989c7, type: 3}
 --- !u!1 &7261580737275485200
 GameObject:
   m_ObjectHideFlags: 0
