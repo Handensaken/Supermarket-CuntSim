@@ -15,12 +15,12 @@ public class OpenFridge : MischiefEvent
     
     private void Mischief()
     {
+        allowMischief = false;
         if (!interactableObject.GetComponent<Animator>()) return;
         Animator animator = interactableObject.GetComponent<Animator>();
         interactableObject.GetComponent<Animator>().SetTrigger("Open");
-        if (!interactableObject.GetComponent<AudioSource>()) return;
         AudioSource audioSource = interactableObject.GetComponent<AudioSource>();
-        audioSource.Play();
-        allowMischief = false;
+        if (audioSource is null) return;
+        audioSource.mute = false;
     }
 }

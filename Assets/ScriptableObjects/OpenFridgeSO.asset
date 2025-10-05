@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3b1695609664934fadae7c07939574c, type: 3}
   m_Name: OpenFridgeSO
   m_EditorClassIdentifier: 
-  allowMischief: 1
+  allowMischief: 0
   OnMischief:
     m_PersistentCalls:
       m_Calls: []
