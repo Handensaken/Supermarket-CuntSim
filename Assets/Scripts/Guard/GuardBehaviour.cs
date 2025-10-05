@@ -9,7 +9,8 @@ namespace Guard
     {
         [SerializeField] private GuardData guardData;
         [SerializeField] private Transform eyes;
-        
+
+        [SerializeField] private Transform childVisual;
         public GuardData GuardData => guardData;
         public Transform Eyes => eyes;
         
@@ -25,7 +26,7 @@ namespace Guard
         [SerializeField]public States debugStates = States.Null;
 
         #endregion
-
+        
         private Transform _target;
         public Transform Target => _target;
 
@@ -85,8 +86,14 @@ namespace Guard
         private void FixedUpdate()
         {
             _currentState.FixedUpdate();
+            FixRotationChild();
         }
 
+        private void FixRotationChild()
+        {
+            childVisual.transform.right = -agent.transform.forward;
+        }
+        
         #region Gizmos
 
         private void OnDrawGizmos()
