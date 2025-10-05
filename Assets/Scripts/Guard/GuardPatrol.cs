@@ -85,8 +85,14 @@ namespace Guard
         public void OnDrawGizmos(GuardBehaviour guardBehaviour)
         {
             VisualizePoints(guardBehaviour);
+            
         }
-    
+
+        private void DrawLineEyeRayCast()
+        {
+            
+        }
+        
         private void VisualizePoints(GuardBehaviour guardBehaviour)
         {
             if (guardBehaviour.PatrolPoints.Length < 1) return;

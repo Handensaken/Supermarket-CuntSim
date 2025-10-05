@@ -18,22 +18,22 @@ namespace Guard
         protected void SetUpStateValuesInAgent(float speed, float angularSpeed, float acceleration)
         {
             SetAgentSpeed(speed);
-            SetAgentAngularSpeed(angularSpeed);
-            SetAgentAcceleration(acceleration);
+            //SetAgentAngularSpeed(angularSpeed);
+            //SetAgentAcceleration(acceleration);
         }
     
         protected void SetAgentSpeed(float speed)
         {
             guardBehaviour.Agent.speed = speed;
         }
-        protected void SetAgentAngularSpeed(float speed)
+        /*protected void SetAgentAngularSpeed(float speed)
         {
             guardBehaviour.Agent.angularSpeed = speed;
         }
         protected void SetAgentAcceleration(float speed)
         {
             guardBehaviour.Agent.acceleration = speed;
-        }
+        }*/
     
         protected bool CheckTargetInRange(Transform eyes,float range)
         {
@@ -67,7 +67,7 @@ namespace Guard
         LayerMask layerMask = ~LayerMask.GetMask("InteractiveEnvironment", "Ignore Raycast");
         Transform target = guardBehaviour.Target;
         
-        Vector3 directionToPlayer = (target.position+new Vector3(0,0.2f,0)  - eyes.position).normalized;
+        Vector3 directionToPlayer = (target.position+new Vector3(0,2f,0)  - eyes.position).normalized;
         Physics.Raycast(eyes.position,directionToPlayer ,out RaycastHit hit,range,layerMask);
             
         foreach (var playerCollider in guardBehaviour.Target.GetComponents<Collider>())
