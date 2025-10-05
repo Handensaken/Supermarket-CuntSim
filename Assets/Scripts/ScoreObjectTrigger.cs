@@ -16,7 +16,6 @@ public class ScoreObjectTrigger : MonoBehaviour
         ScoreObject scoreObject = other.GetComponent<ScoreObject>();
         if (scoreObject.enabled)
         {
-            Debug.Log("Träff");
             scorePort.OnScore(scoreObject.ScoreValue);
             scoreObject.enabled = false;
         }

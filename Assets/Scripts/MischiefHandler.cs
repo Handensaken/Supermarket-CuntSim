@@ -7,13 +7,11 @@ public class MischiefHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag != "Player") return;
         mischiefEvent.allowMischief = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.tag != "Player") return;
         mischiefEvent.allowMischief = false;
     }
 }
