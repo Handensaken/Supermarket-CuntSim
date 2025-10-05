@@ -127,9 +127,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        Vector2 input = actionReferences.move.action.ReadValue<Vector2>();
-        Vector3 direction = new Vector3(input.x, 0f, input.y).normalized;
-        transform.position += direction * moveSpeed * Time.deltaTime;
+        Vector2 direction = actionReferences.move.action.ReadValue<Vector2>();
+        var scaledMoveSpeed = moveSpeed * Time.deltaTime;
+        var moveVector = Quaternion.Euler(0, transform.eulerAngles.y + 270, 0) * new Vector3(direction.x, 0, direction.y);
+        transform.position += moveVector * scaledMoveSpeed;
         Look();
     }
 
