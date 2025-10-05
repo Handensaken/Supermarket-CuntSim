@@ -49193,6 +49193,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: d47c230f24e33fa4c894476574371810, type: 3}
     - target: {fileID: 3690079031007578973, guid: 72f842faa5160f440b2ed24cb23eab96, type: 3}
+      propertyPath: scorePort
+      value: 
+      objectReference: {fileID: 11400000, guid: dce54a78dde138543a1aaa07fba9a2b8, type: 2}
+    - target: {fileID: 3690079031007578973, guid: 72f842faa5160f440b2ed24cb23eab96, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 2012726946}
