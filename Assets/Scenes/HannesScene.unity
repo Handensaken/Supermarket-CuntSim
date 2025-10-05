@@ -139,7 +139,9 @@ MonoBehaviour:
   moveSpeed: 10
   currentMischiefEvents:
   - {fileID: 11400000, guid: c3257684d1818dc42973f30c3fb51564, type: 2}
-  peeSound: {fileID: 0}
+  audioSource: {fileID: 51735518}
+  peeSound: {fileID: 8300000, guid: d47c230f24e33fa4c894476574371810, type: 3}
+  footstepsSound: {fileID: 8300000, guid: d33f7b67e4b00ef459762a7c12c715fb, type: 3}
   actionReferences:
     move: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     look: {fileID: -5630151704836100654, guid: 052faaac586de48259a63d0c4782560b, type: 3}
@@ -224,7 +226,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!82 &51735517
+--- !u!82 &51735518
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -234,12 +236,12 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1456605067132546332, guid: 4e3a6d621a4617643986e34b4934a2d1, type: 2}
-  m_audioClip: {fileID: 8300000, guid: d47c230f24e33fa4c894476574371810, type: 3}
-  m_Resource: {fileID: 8300000, guid: d47c230f24e33fa4c894476574371810, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: d33f7b67e4b00ef459762a7c12c715fb, type: 3}
+  m_Resource: {fileID: 8300000, guid: d33f7b67e4b00ef459762a7c12c715fb, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -281,7 +283,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -769,6 +771,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3690079031007578973, guid: 72f842faa5160f440b2ed24cb23eab96, type: 3}
+      propertyPath: peeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: d47c230f24e33fa4c894476574371810, type: 3}
+    - target: {fileID: 3690079031007578973, guid: 72f842faa5160f440b2ed24cb23eab96, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 51735518}
+    - target: {fileID: 3690079031007578973, guid: 72f842faa5160f440b2ed24cb23eab96, type: 3}
+      propertyPath: footstepsSound
+      value: 
+      objectReference: {fileID: 8300000, guid: d33f7b67e4b00ef459762a7c12c715fb, type: 3}
     - target: {fileID: 6350252375494338419, guid: 72f842faa5160f440b2ed24cb23eab96, type: 3}
       propertyPath: m_Name
       value: PlayerCharacter
@@ -831,7 +845,7 @@ PrefabInstance:
       addedObject: {fileID: 51735512}
     - targetCorrespondingSourceObject: {fileID: 6350252375494338419, guid: 72f842faa5160f440b2ed24cb23eab96, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 51735517}
+      addedObject: {fileID: 51735518}
   m_SourcePrefab: {fileID: 100100000, guid: 72f842faa5160f440b2ed24cb23eab96, type: 3}
 --- !u!1 &2075841370
 GameObject:
