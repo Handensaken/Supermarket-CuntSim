@@ -10885,10 +10885,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 418218264043197560, guid: 0b5a9c000802fcf4da72e682df4de60e, type: 3}
-      propertyPath: m_Bindings.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2617039543030696183, guid: 0b5a9c000802fcf4da72e682df4de60e, type: 3}
       propertyPath: m_Name
       value: He Bacon
