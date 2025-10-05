@@ -5,10 +5,14 @@ using GameStage = GamePort.GameStage;
 
 public class GameManager : MonoBehaviour
 {
+    private static string victoryScene = "W";
+    private static string loseScene = "L";
+
+
     [Space]
     [SerializeField] private GamePort gamePort;
-    [SerializeField] private GameData gameData;
-    
+    //[SerializeField] private GameData gameData;
+
     private void OnEnable()
     {
         gamePort.OnGameEnd += HandleSceneChange;
@@ -27,24 +31,28 @@ public class GameManager : MonoBehaviour
                 LoadNextScene();
                 break;
             case GameStage.Victory:
-                LoadScene(gameData.victoryScene);
+                LoadScene(victoryScene);
                 break;
             case GameStage.Defeat:
-                LoadScene(gameData.defeatScene);
+                LoadScene(loseScene);
                 break;
             default:
                 Debug.LogWarning("missing implementation in sceneHandler");
                 break;
         }
     }
-    
+
     private void LoadNextScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    private void LoadScene(SceneAsset scene)
+    public void LoadScene(string s)
     {
-        SceneManager.LoadScene(scene.name);
+        SceneManager.LoadScene(s);
     }
-}
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+} 
