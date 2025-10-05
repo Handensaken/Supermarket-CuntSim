@@ -14,11 +14,13 @@ public class MischiefHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!other.gameObject.CompareTag("Player")) return;
         mischiefEvent.allowMischief = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
+        if (!other.gameObject.CompareTag("Player")) return;
         mischiefEvent.allowMischief = false;
     }
 }
