@@ -10318,6 +10318,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 652035627778875567, guid: 995b7d6255ea17545bc7f6b576ec3970, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 652035627778875567, guid: 995b7d6255ea17545bc7f6b576ec3970, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a890f0074836c1f4b922802edb82328b, type: 2}
     - target: {fileID: 3568685009044017547, guid: 995b7d6255ea17545bc7f6b576ec3970, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.9
@@ -47514,6 +47522,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6350252375494338419, guid: 72f842faa5160f440b2ed24cb23eab96, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2012726941}
+    - targetCorrespondingSourceObject: {fileID: 6350252375494338419, guid: 72f842faa5160f440b2ed24cb23eab96, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2012726945}
   m_SourcePrefab: {fileID: 100100000, guid: 72f842faa5160f440b2ed24cb23eab96, type: 3}
 --- !u!1 &2012726940 stripped
 GameObject:
@@ -47623,6 +47634,20 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &2012726945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012726940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd18fd05fb989e543a33532ccc341524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mat: {fileID: 2100000, guid: a890f0074836c1f4b922802edb82328b, type: 2}
+  _outLineCutoffRange: 15
 --- !u!1001 &2014827044
 PrefabInstance:
   m_ObjectHideFlags: 0
