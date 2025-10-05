@@ -93,6 +93,7 @@ public class PlayerMovement : MonoBehaviour
                 moving = false;
                 animator.SetBool("Running", false);
                 audioSource.Stop();
+                rb.linearVelocity = Vector3.zero;
             }
         }
         else if(context.action == actionReferences.look.action)
@@ -141,7 +142,7 @@ public class PlayerMovement : MonoBehaviour
         Vector2 direction = actionReferences.move.action.ReadValue<Vector2>();
         var scaledMoveSpeed = moveSpeed * Time.deltaTime;
         var moveVector = Quaternion.Euler(0, transform.eulerAngles.y + 270, 0) * new Vector3(direction.x, 0, direction.y);
-        rb.position += moveVector * scaledMoveSpeed;
+        rb.linearVelocity = moveVector * moveSpeed;
         Look();
     }
 
