@@ -43,6 +43,10 @@ namespace Guard
 
         #endregion
 
+        [SerializeField] private Animator animator;
+
+        public Animator GetAnimator => animator;
+
         private void OnEnable()
         {
             startPos = transform.position;

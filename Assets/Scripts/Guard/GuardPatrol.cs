@@ -17,6 +17,7 @@ namespace Guard
         public override void Enter()
         {
             guardBehaviour.debugStates = States.Patrol;
+            guardBehaviour.GetAnimator.SetBool("Walking", true);
             
             UpdateTargetPoint(patrolPointIndex);
             Parameters patrolValues = guardBehaviour.GuardData.patrol;
@@ -38,7 +39,10 @@ namespace Guard
             CheckSwapPatrolPoint();
         }
 
-        public override void Exit() {}
+        public override void Exit()
+        {
+            guardBehaviour.GetAnimator.SetBool("Walking", false);
+        }
     
         private void SetTargetPoint(int currentPatrolIndex)
         {
@@ -85,11 +89,6 @@ namespace Guard
         public void OnDrawGizmos(GuardBehaviour guardBehaviour)
         {
             VisualizePoints(guardBehaviour);
-            
-        }
-
-        private void DrawLineEyeRayCast()
-        {
             
         }
         

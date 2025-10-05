@@ -17,13 +17,17 @@ namespace Guard
         public override void Enter()
         {
             guardBehaviour.debugStates = States.Run;
+            guardBehaviour.GetAnimator.SetBool("Running", true);
             guardBehaviour.Agent.SetDestination(guardBehaviour.Target.position);
 
             Parameters run = guardBehaviour.GuardData.run;
             SetUpStateValuesInAgent(run.speed,run.angularSpeed, run.acceleration);
         }
 
-        public override void Exit() {}
+        public override void Exit()
+        {
+            guardBehaviour.GetAnimator.SetBool("Running", false);
+        }
 
         public override void FixedUpdate()
         {
