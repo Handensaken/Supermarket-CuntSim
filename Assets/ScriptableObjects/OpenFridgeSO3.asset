@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4a8ef7f34d307c48b5f9db8cbd37c9d, type: 3}
-  m_Name: StartFireSO
+  m_Script: {fileID: 11500000, guid: c3b1695609664934fadae7c07939574c, type: 3}
+  m_Name: OpenFridgeSO3
   m_EditorClassIdentifier: 
-  allowMischief: 0
+  allowMischief: 1
   OnMischief:
     m_PersistentCalls:
       m_Calls: []

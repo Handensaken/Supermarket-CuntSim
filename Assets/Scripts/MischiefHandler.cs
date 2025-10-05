@@ -6,9 +6,14 @@ public class MischiefHandler : MonoBehaviour
     [SerializeField] private MischiefEvent mischiefEvent;
     [SerializeField] private GameObject interactableObject;
 
+    private void Awake()
+    {
+        mischiefEvent.allowMischief = false;
+        mischiefEvent.interactableObject = interactableObject;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        mischiefEvent.interactableObject = interactableObject;
         mischiefEvent.allowMischief = true;
     }
 
