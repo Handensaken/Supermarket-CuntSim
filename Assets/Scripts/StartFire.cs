@@ -17,6 +17,6 @@ public class StartFire : MischiefEvent
     
     private void Mischief()
     {
-        Debug.Log("Starting Fire");
+        interactableObject.SetActive(true);
     }
 }
