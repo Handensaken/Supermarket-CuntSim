@@ -14,8 +14,7 @@ namespace Guard
         public Transform Eyes => eyes;
         
         #region States
-
-        public GuardIdle guardIdle = new GuardIdle();
+        
         public GuardPatrol guardPatrol = new GuardPatrol();
         public GuardRun guardRun = new GuardRun();
         public GuardSlip guardSlip = new GuardSlip();
@@ -52,7 +51,6 @@ namespace Guard
         {
             startPos = transform.position;
             
-            guardIdle.Awake(this);
             guardPatrol.Awake(this);
             guardRun.Awake(this);
             guardAttack.Awake(this);
@@ -62,7 +60,6 @@ namespace Guard
 
         private void Start()
         {
-            
             _target = FindAnyObjectByType<PlayerMovement>()?.transform;
             Initialize();
         }
@@ -80,9 +77,14 @@ namespace Guard
             _currentState.Enter();
         }
 
-        private void Update()
+        /*private void Update()
         {
             _currentState.Update();
+        }*/
+        
+        private void FixedUpdate()
+        {
+            _currentState.FixedUpdate();
         }
 
         #region Gizmos
@@ -177,7 +179,6 @@ namespace Guard
     public enum States
     {
         Null,
-        Idle,
         Patrol,
         Run,
         Attack,

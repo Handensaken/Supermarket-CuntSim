@@ -16,6 +16,7 @@ namespace Guard
         
         public override void Enter()
         {
+            guardBehaviour.debugStates = States.Run;
             guardBehaviour.Agent.SetDestination(guardBehaviour.Target.position);
 
             Parameters run = guardBehaviour.GuardData.run;
@@ -24,7 +25,7 @@ namespace Guard
 
         public override void Exit() {}
 
-        public override void Update()
+        public override void FixedUpdate()
         {
             //TrollEyes
             GuardState newState = Check4Player(guardBehaviour.Eyes, guardBehaviour.GuardData.sight.sightRange);
@@ -37,6 +38,7 @@ namespace Guard
 
             guardBehaviour.Agent.SetDestination(guardBehaviour.Target.position);
         }
+        public override void Update() {}
 
         private GuardState Check4Player(Transform eyes, float range)
         {
@@ -52,6 +54,7 @@ namespace Guard
 
             if (CheckTargetInRange(guardBehaviour.transform, guardBehaviour.GuardData.attackRange))// insight and close enough for attack
             {
+                Debug.Log("Attack");
                 return guardBehaviour.guardAttack;
             }
 

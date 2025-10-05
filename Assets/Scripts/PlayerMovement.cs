@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 
@@ -13,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     private bool moving, looking, attacking;
     private Animator animator;
     [SerializeField] private List<MischiefEvent> currentMischiefEvents = new List<MischiefEvent>();
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioResource peeSound, footstepsSound;
 
     [Serializable]
     struct ActionReferences
@@ -80,11 +83,14 @@ public class PlayerMovement : MonoBehaviour
             {
                 moving = true;
                 animator.SetBool("Running", true);
+                audioSource.resource = footstepsSound;
+                audioSource.Play();
             }
             else if (context.canceled)
             {
                 moving = false;
                 animator.SetBool("Running", false);
+                audioSource.Stop();
             }
         }
         else if(context.action == actionReferences.look.action)
@@ -117,10 +123,13 @@ public class PlayerMovement : MonoBehaviour
             if (context.performed)
             {
                 animator.SetBool("Pissing", true);
+                audioSource.resource = peeSound;
+                audioSource.Play();
             }
             else if (context.canceled)
             {
                 animator.SetBool("Pissing", false);
+                audioSource.Stop();
             }
         }
     }

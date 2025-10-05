@@ -1,10 +1,12 @@
 using System;
+using UnityEngine;
 
 namespace Guard
 {
     [Serializable]
     public class GuardAttack : GuardState
     {
+        [SerializeField] private GamePort gameport;
         public override void Awake(GuardBehaviour guardBehaviour)
         {
             this.guardBehaviour = guardBehaviour;
@@ -12,17 +14,12 @@ namespace Guard
 
         public override void Enter()
         {
-            throw new NotImplementedException();
+            guardBehaviour.debugStates = States.Attack;
+            gameport.OnGameEnd(GamePort.GameStage.Defeat);
         }
 
-        public override void Update()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Exit()
-        {
-            throw new NotImplementedException();
-        }
+        public override void Update() {}
+        public override void FixedUpdate(){}
+        public override void Exit() {}
     }
 }
