@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c374f9802f594934399ec408e71e05bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.992288
+      value: -47.941826
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c374f9802f594934399ec408e71e05bd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c374f9802f594934399ec408e71e05bd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 25.364841
+      value: 112.41935
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c374f9802f594934399ec408e71e05bd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c374f9802f594934399ec408e71e05bd, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5deb908ec43f81749b8a1a59d4a162b0, type: 2}
     - target: {fileID: 919132149155446097, guid: c374f9802f594934399ec408e71e05bd, type: 3}
       propertyPath: m_Name
       value: toilet
