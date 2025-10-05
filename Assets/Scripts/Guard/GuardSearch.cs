@@ -16,6 +16,7 @@ namespace Guard
         public override void Enter()
         {
             guardBehaviour.debugStates = States.Search;
+            guardBehaviour.GetAnimator.SetBool("Walking", true);
             Parameters searchParameters = guardBehaviour.GuardData.patrol;
             SetUpStateValuesInAgent(searchParameters.speed, searchParameters.angularSpeed, searchParameters.acceleration);
         }
@@ -40,7 +41,10 @@ namespace Guard
             }
         }
 
-        public override void Exit() {}
+        public override void Exit()
+        {
+            guardBehaviour.GetAnimator.SetBool("Walking", false);
+        }
     
         private GuardState Check4Player(Transform eyes, float range, float angle)
         {

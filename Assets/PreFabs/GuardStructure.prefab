@@ -100,6 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e24b0d518b72404b85aca0009538c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scorePort: {fileID: 11400000, guid: dce54a78dde138543a1aaa07fba9a2b8, type: 2}
+  scoreActive: 0
   guardData: {fileID: 11400000, guid: 58b9197dd6a33d646bafbcce79cb09f7, type: 2}
   eyes: {fileID: 5962647954349328093}
   childVisual: {fileID: 8794681533138003532}

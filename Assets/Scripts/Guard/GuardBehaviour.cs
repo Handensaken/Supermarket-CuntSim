@@ -7,7 +7,10 @@ namespace Guard
 {
     public class GuardBehaviour : MonoBehaviour
     {
-        [SerializeField] private GuardData guardData;
+        [SerializeField] private ScorePort scorePort;
+        public bool scoreActive;
+        
+        [Space,SerializeField] private GuardData guardData;
         [SerializeField] private Transform eyes;
 
         [SerializeField] private Transform childVisual;
@@ -49,7 +52,18 @@ namespace Guard
 
         private void OnEnable()
         {
+            scorePort.OnScore += ScoreFlag;
             startPos = transform.position;
+        }
+
+        private void OnDisable() //Vackert
+        {
+            scorePort.OnScore -= ScoreFlag;
+        }
+
+        private void ScoreFlag(uint x)
+        {
+            scoreActive = true;
         }
 
         private void Awake()

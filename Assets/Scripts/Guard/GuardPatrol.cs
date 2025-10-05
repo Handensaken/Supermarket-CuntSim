@@ -59,7 +59,7 @@ namespace Guard
         /// <returns>true if swap state</returns>
         private GuardState Check4Player(Transform eyes, Sight sight)
         {
-            if (guardBehaviour.Target == null) return guardBehaviour.guardPatrol;
+            if (guardBehaviour.Target == null || !guardBehaviour.scoreActive) return guardBehaviour.guardPatrol;
             
             if (!CheckTargetInRange(eyes,sight.sightRange)) return guardBehaviour.guardPatrol;
             if (!CheckTargetWithinAngleOfSight(eyes,sight.totalSightAngle/2f)) return guardBehaviour.guardPatrol;

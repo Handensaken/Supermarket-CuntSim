@@ -21,6 +21,6 @@ MonoBehaviour:
     angularSpeed: 10
     acceleration: 10
   sight:
-    totalSightAngle: 95.9
-    sightRange: 10
+    totalSightAngle: 111.2
+    sightRange: 50
   attackRange: 2
