@@ -48,6 +48,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4683669308469848369, guid: 133ca3470dccf1b44b0155b984ae92b5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3ea3317564d2e9d4ea4f86a59bbe5c37, type: 2}
+    - target: {fileID: -1461304994638716399, guid: 133ca3470dccf1b44b0155b984ae92b5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3ea3317564d2e9d4ea4f86a59bbe5c37, type: 2}
     - target: {fileID: 919132149155446097, guid: 133ca3470dccf1b44b0155b984ae92b5, type: 3}
       propertyPath: m_Name
       value: freezer_closed
