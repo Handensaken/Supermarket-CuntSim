@@ -536,17 +536,17 @@
     "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
     "m_ObjectId": "0d72e5d69f3442139f8bded89be344fa",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "93f189c31a134ddf91c5518209e7fcee"
     },
     "m_Name": "Property",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1248.4400634765625,
-            "y": 862.27001953125,
-            "width": 0.0,
-            "height": 0.0
+            "x": -1314.666748046875,
+            "y": 878.666748046875,
+            "width": 130.0,
+            "height": 35.99993896484375
         }
     },
     "m_Slots": [
@@ -1759,8 +1759,8 @@
     "m_ObjectId": "93f189c31a134ddf91c5518209e7fcee",
     "m_Title": "Scales outline by object scale and camera distance",
     "m_Position": {
-        "x": -1381.3333740234375,
-        "y": 386.6666259765625
+        "x": -1568.666748046875,
+        "y": 386.6666564941406
     }
 }
 
@@ -2279,9 +2279,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1356.0001220703125,
-            "y": 731.3334350585938,
-            "width": 123.333251953125,
+            "x": -1543.33349609375,
+            "y": 774.0000610351563,
+            "width": 123.3333740234375,
             "height": 246.66668701171876
         }
     },

@@ -48094,7 +48094,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mat: {fileID: 2100000, guid: a890f0074836c1f4b922802edb82328b, type: 2}
-  _outLineCutoffRange: 15
+  _outLineCutoffRange: 12
 --- !u!82 &2012726946
 AudioSource:
   m_ObjectHideFlags: 0
@@ -50409,6 +50409,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5055066843221946589, guid: a687e50299214bb45a9ecc3ee8d7839b, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055066843221946589, guid: a687e50299214bb45a9ecc3ee8d7839b, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: -876546973899608171, guid: 56538c84632a5084987818793023cfa3, type: 3}
     - target: {fileID: 8495511587284917059, guid: a687e50299214bb45a9ecc3ee8d7839b, type: 3}
       propertyPath: m_Name
       value: freezer_mischief (3)
@@ -51383,9 +51391,17 @@ PrefabInstance:
       value: tidningshylla (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3486325358243206123, guid: 01aea7e636c9a334885fe2d60983d510, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486325358243206123, guid: 01aea7e636c9a334885fe2d60983d510, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: dc91afe82d3d101468ee1645f9d4662c, type: 2}
+    - target: {fileID: 3486325358243206123, guid: 01aea7e636c9a334885fe2d60983d510, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a890f0074836c1f4b922802edb82328b, type: 2}
     - target: {fileID: 7838073371774023056, guid: 01aea7e636c9a334885fe2d60983d510, type: 3}
       propertyPath: m_IsActive
       value: 0
